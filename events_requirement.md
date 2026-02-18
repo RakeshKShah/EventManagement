@@ -1,7 +1,7 @@
 # Event Management Application – Requirements
 
 ## Overview
-This application allows users to manage events, create tasks, and assign tasks to specific events to ensure organized event execution.
+This application allows users to manage events, create tasks, and assign tasks to specific events to ensure organized event execution. 
 
 ---
 
