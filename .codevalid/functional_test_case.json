@@ -1207,7 +1207,8 @@
           },
           "type": "edge"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_5316492874_20240606120004/backend_service_create_task.py"
     },
     {
       "implementation_id": "backend_service_get_task",
@@ -1783,7 +1784,8 @@
           },
           "type": "positive"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_8392710645_20240606120002/backend_service_update_task.py"
     },
     {
       "implementation_id": "backend_service_delete_task",
@@ -1908,7 +1910,8 @@
           },
           "type": "positive"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_4051629387_20240606120003/backend_service_delete_task.py"
     },
     {
       "implementation_id": "backend_repo_create_task",
@@ -2069,7 +2072,8 @@
           },
           "type": "positive"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_5316492874_20240606120004/backend_repo_create_task.py"
     },
     {
       "implementation_id": "backend_repo_get_task",
@@ -2295,7 +2299,8 @@
           },
           "type": "edge"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_5316492874_20240606120004/backend_repo_update_task.py"
     },
     {
       "implementation_id": "backend_repo_delete_task",
@@ -2420,7 +2425,8 @@
           },
           "type": "edge"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_5316492874_20240606120004/backend_repo_delete_task.py"
     },
     {
       "implementation_id": "service_get_all_tasks",
@@ -2831,7 +2837,8 @@
           },
           "type": "edge"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_5316492874_20240606120004/frontend_service_createTask.ts"
     },
     {
       "implementation_id": "frontend_service_updateTask",
@@ -3004,7 +3011,8 @@
           },
           "type": "negative"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_5316492874_20240606120004/frontend_service_updateTask.ts"
     },
     {
       "implementation_id": "frontend_service_getTasks",
@@ -3189,7 +3197,8 @@
           },
           "type": "negative"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_5316492874_20240606120004/frontend_service_getTasks.ts"
     },
     {
       "implementation_id": "frontend_service_deleteTask",
@@ -3326,7 +3335,8 @@
           },
           "type": "negative"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_5316492874_20240606120004/frontend_service_deleteTask.ts"
     },
     {
       "implementation_id": "backend_service_get_all_tasks",
@@ -3451,7 +3461,8 @@
           },
           "type": "negative"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_5316492874_20240606120004/backend_service_get_all_tasks.py"
     },
     {
       "implementation_id": "backend_repo_get_all_tasks",
@@ -3564,7 +3575,8 @@
           },
           "type": "edge"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_5316492874_20240606120004/backend_repo_get_all_tasks.py"
     },
     {
       "implementation_id": "frontend_api_get_tasks_function",
@@ -3737,7 +3749,8 @@
           },
           "type": "edge"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_1962837450_20240606120001/frontend_api_get_tasks_function.ts"
     },
     {
       "implementation_id": "backend_service_task_service_get_all_tasks",
@@ -3862,7 +3875,8 @@
           },
           "type": "edge"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_1962837450_20240606120001/backend_service_task_service_get_all_tasks.py"
     },
     {
       "implementation_id": "backend_repository_task_repository_get_all",
@@ -3987,7 +4001,8 @@
           },
           "type": "positive"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_1962837450_20240606120001/backend_repository_task_repository_get_all.py"
     },
     {
       "implementation_id": "frontend_create_task_api_function",
@@ -4285,7 +4300,8 @@
           },
           "type": "positive"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_0741829312_20240606120000/frontend_create_task_api_function.ts"
     },
     {
       "implementation_id": "backend_task_service_create_task_method",
@@ -4699,7 +4715,8 @@
           },
           "type": "edge"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_0741829312_20240606120000/backend_task_service_create_task_method.py"
     },
     {
       "implementation_id": "backend_task_repository_create_method",
@@ -5011,7 +5028,8 @@
           },
           "type": "positive"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_0741829312_20240606120000/backend_task_repository_create_method.py"
     },
     {
       "implementation_id": "frontend_api_update_task",
@@ -5385,7 +5403,8 @@
           },
           "type": "negative"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_8392710645_20240606120002/frontend_api_update_task.ts"
     },
     {
       "implementation_id": "backend_repository_update_task",
@@ -5796,7 +5815,8 @@
           },
           "type": "edge"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_8392710645_20240606120002/backend_repository_update_task.py"
     },
     {
       "implementation_id": "frontend_api_delete_task",
@@ -5921,7 +5941,8 @@
           },
           "type": "positive"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_4051629387_20240606120003/frontend_api_delete_task.ts"
     },
     {
       "implementation_id": "backend_repository_delete_task",
@@ -6034,7 +6055,8 @@
           },
           "type": "edge"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_4051629387_20240606120003/backend_repository_delete_task.py"
     }
   ],
   "component": [
@@ -7127,7 +7149,8 @@
           },
           "type": "positive"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_5316492874_20240606120004/ui_task_assignment_dropdown_TaskForm.ts"
     },
     {
       "implementation_id": "ui_task_list_event_filter_TaskList",
@@ -7360,7 +7383,8 @@
           },
           "type": "positive"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_5316492874_20240606120004/ui_task_list_event_filter_TaskList.ts"
     },
     {
       "implementation_id": "ui_event_card_task_count_EventCard",
@@ -7533,7 +7557,8 @@
           },
           "type": "edge"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_5316492874_20240606120004/ui_event_card_task_count_EventCard.ts"
     },
     {
       "implementation_id": "ui_task_list_component_view_all_tasks",
@@ -7682,7 +7707,8 @@
           },
           "type": "negative"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_1962837450_20240606120001/ui_task_list_component_view_all_tasks.ts"
     },
     {
       "implementation_id": "ui_task_form_component_create_task",
@@ -7891,7 +7917,8 @@
           },
           "type": "positive"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_0741829312_20240606120000/ui_task_form_component_create_task.ts"
     },
     {
       "implementation_id": "ui_task_card_edit_button",
@@ -8052,7 +8079,8 @@
           },
           "type": "edge"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_8392710645_20240606120002/ui_task_card_edit_button.ts"
     },
     {
       "implementation_id": "ui_task_list_edit_handler",
@@ -8189,7 +8217,8 @@
           },
           "type": "edge"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_8392710645_20240606120002/ui_task_list_edit_handler.ts"
     },
     {
       "implementation_id": "ui_task_form_edit_submit",
@@ -8338,7 +8367,8 @@
           },
           "type": "negative"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_8392710645_20240606120002/ui_task_form_edit_submit.ts"
     },
     {
       "implementation_id": "ui_tasklist_handle_delete",
@@ -8463,7 +8493,8 @@
           },
           "type": "edge"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_4051629387_20240606120003/ui_tasklist_handle_delete.ts"
     }
   ],
   "endpoint": [
@@ -9372,7 +9403,8 @@
           },
           "type": "negative"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_5316492874_20240606120004/backend_endpoint_create_task.py"
     },
     {
       "implementation_id": "backend_endpoint_update_task",
@@ -9644,7 +9676,8 @@
           },
           "type": "negative"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_5316492874_20240606120004/backend_endpoint_update_task.py"
     },
     {
       "implementation_id": "backend_endpoint_get_all_tasks",
@@ -9907,7 +9940,8 @@
           },
           "type": "edge"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_5316492874_20240606120004/backend_endpoint_get_all_tasks.py"
     },
     {
       "implementation_id": "backend_endpoint_delete_task",
@@ -10128,7 +10162,8 @@
           },
           "type": "negative"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_4051629387_20240606120003/backend_endpoint_delete_task.py"
     },
     {
       "implementation_id": "backend_api_tasks_get_all_tasks_endpoint",
@@ -10376,7 +10411,8 @@
           },
           "type": "edge"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_1962837450_20240606120001/backend_api_tasks_get_all_tasks_endpoint.py"
     },
     {
       "implementation_id": "backend_tasks_create_endpoint",
@@ -10842,7 +10878,8 @@
           },
           "type": "positive"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_0741829312_20240606120000/backend_tasks_create_endpoint.py"
     },
     {
       "implementation_id": "backend_api_update_task_endpoint",
@@ -11234,7 +11271,8 @@
           },
           "type": "edge"
         }
-      ]
+      ],
+      "test_path": ".codevalid/tests/task_8392710645_20240606120002/backend_api_update_task_endpoint.py"
     }
   ]
 }
