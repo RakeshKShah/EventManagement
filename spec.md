@@ -10,7 +10,7 @@ A web application to manage events and their associated tasks.
 - **Read**: List of all events.
 - **Update**: Edit details.
 - **Delete**: Remove event.
-
+ 
 ### 2.2 Task Management
 - **Create**: Title, Description, Status (To Do, In Progress, Completed), Associated Event.
 - **Read**: View tasks (grouped by event or filtered).
