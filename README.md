@@ -9,7 +9,7 @@ A full-stack web application for managing events and their associated tasks, bui
 - View all events
 - Edit event details
 - Delete events (cascades to associated tasks)
-
+ 
 ### Task Management
 - Create tasks with title, description, and status (To Do, In Progress, Completed)
 - View all tasks (with optional filtering by event)
