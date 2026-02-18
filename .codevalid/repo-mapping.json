@@ -405,5 +405,361 @@
       }
     ],
     "missing_implementations": []
+  },
+  "task_5316492874_20240606120004": {
+    "implementation": [
+      {
+        "How_is_it_connected_to_implementation": "Provides UI for assigning a task to an event via a dropdown. Handles creation and editing of tasks, including event selection.",
+        "file_path": "frontend/src/components/TaskForm.tsx",
+        "id": "ui_task_assignment_dropdown_TaskForm",
+        "name": "TaskForm",
+        "pseudo_code": "On form render:\n  Display event dropdown populated from events prop\nOn submit:\n  IF editing\n    Call updateTask API with new event_id\n  ELSE\n    Call createTask API with event_id",
+        "type": "component"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Displays tasks and their associated event names. Handles task deletion and edit actions.",
+        "file_path": "frontend/src/components/TaskList.tsx",
+        "id": "ui_task_list_event_filter_TaskList",
+        "name": "TaskList",
+        "pseudo_code": "For each task in tasks:\n  Display task title and event name\n  Provide edit and delete buttons\nOn delete:\n  Call deleteTask API",
+        "type": "component"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Displays the number of tasks associated with an event, reflecting task-event association.",
+        "file_path": "frontend/src/components/EventCard.tsx",
+        "id": "ui_event_card_task_count_EventCard",
+        "name": "EventCard",
+        "pseudo_code": "Display event details\nDisplay task count: event.tasks.length",
+        "type": "component"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Sends POST request to backend to create a task with an event association.",
+        "file_path": "frontend/src/services/api.ts",
+        "id": "frontend_service_createTask",
+        "name": "createTask",
+        "pseudo_code": "POST /tasks with task data including event_id",
+        "type": "function"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Sends PUT request to backend to update a task, including reassigning to another event.",
+        "file_path": "frontend/src/services/api.ts",
+        "id": "frontend_service_updateTask",
+        "name": "updateTask",
+        "pseudo_code": "PUT /tasks/{id} with updated task data including new event_id",
+        "type": "function"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Fetches tasks, optionally filtered by event_id to list tasks for a specific event.",
+        "file_path": "frontend/src/services/api.ts",
+        "id": "frontend_service_getTasks",
+        "name": "getTasks",
+        "pseudo_code": "GET /tasks?event_id={eventId}",
+        "type": "function"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Sends DELETE request to backend to remove a task from its event.",
+        "file_path": "frontend/src/services/api.ts",
+        "id": "frontend_service_deleteTask",
+        "name": "deleteTask",
+        "pseudo_code": "DELETE /tasks/{id}",
+        "type": "function"
+      },
+      {
+        "How_is_it_connected_to_implementation": "API endpoint for creating a task, ensuring event association.",
+        "file_path": "backend/api/tasks.py",
+        "id": "backend_endpoint_create_task",
+        "name": "create_task",
+        "pseudo_code": "Receive POST /tasks\nCall TaskService.create_task(task_data)",
+        "type": "endpoint"
+      },
+      {
+        "How_is_it_connected_to_implementation": "API endpoint for updating a task, including reassigning to another event.",
+        "file_path": "backend/api/tasks.py",
+        "id": "backend_endpoint_update_task",
+        "name": "update_task",
+        "pseudo_code": "Receive PUT /tasks/{task_id}\nCall TaskService.update_task(task_id, task_data)",
+        "type": "endpoint"
+      },
+      {
+        "How_is_it_connected_to_implementation": "API endpoint for listing tasks, optionally filtered by event_id.",
+        "file_path": "backend/api/tasks.py",
+        "id": "backend_endpoint_get_all_tasks",
+        "name": "get_all_tasks",
+        "pseudo_code": "Receive GET /tasks?event_id={eventId}\nCall TaskService.get_all_tasks(event_id)",
+        "type": "endpoint"
+      },
+      {
+        "How_is_it_connected_to_implementation": "API endpoint for deleting a task, removing it from its event.",
+        "file_path": "backend/api/tasks.py",
+        "id": "backend_endpoint_delete_task",
+        "name": "delete_task",
+        "pseudo_code": "Receive DELETE /tasks/{task_id}\nCall TaskService.delete_task(task_id)",
+        "type": "endpoint"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Validates event existence, creates task with event association.",
+        "file_path": "backend/services/task_service.py",
+        "id": "backend_service_create_task",
+        "name": "TaskService.create_task",
+        "pseudo_code": "IF event exists for event_id\n  Create task with event_id\nELSE\n  Raise error",
+        "type": "function"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Handles task update, including reassignment to another event. Validates new event existence.",
+        "file_path": "backend/services/task_service.py",
+        "id": "backend_service_update_task",
+        "name": "TaskService.update_task",
+        "pseudo_code": "IF task exists\n  IF event_id provided\n    IF event exists\n      Update task.event_id\n    ELSE\n      Raise error\n  Update other fields\n  Commit changes\nELSE\n  Raise error",
+        "type": "function"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Lists tasks, optionally filtered by event_id.",
+        "file_path": "backend/services/task_service.py",
+        "id": "backend_service_get_all_tasks",
+        "name": "TaskService.get_all_tasks",
+        "pseudo_code": "Call TaskRepository.get_all(event_id)\nReturn list of tasks",
+        "type": "function"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Deletes a task, removing it from its event.",
+        "file_path": "backend/services/task_service.py",
+        "id": "backend_service_delete_task",
+        "name": "TaskService.delete_task",
+        "pseudo_code": "IF task exists\n  Delete task\nELSE\n  Raise error",
+        "type": "function"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Persists new task with event_id to database.",
+        "file_path": "backend/repositories/task_repository.py",
+        "id": "backend_repo_create_task",
+        "name": "TaskRepository.create",
+        "pseudo_code": "Add task to DB\nCommit\nRefresh\nReturn task",
+        "type": "function"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Persists updated task (including event reassignment) to database.",
+        "file_path": "backend/repositories/task_repository.py",
+        "id": "backend_repo_update_task",
+        "name": "TaskRepository.update",
+        "pseudo_code": "Commit DB\nRefresh task\nReturn task",
+        "type": "function"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Fetches tasks, optionally filtered by event_id.",
+        "file_path": "backend/repositories/task_repository.py",
+        "id": "backend_repo_get_all_tasks",
+        "name": "TaskRepository.get_all",
+        "pseudo_code": "Query tasks\nIF event_id provided\n  Filter by event_id\nReturn tasks",
+        "type": "function"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Removes task from database.",
+        "file_path": "backend/repositories/task_repository.py",
+        "id": "backend_repo_delete_task",
+        "name": "TaskRepository.delete",
+        "pseudo_code": "Delete task from DB\nCommit",
+        "type": "function"
+      }
+    ],
+    "missing_implementations": [
+      "There is no explicit enforcement that each task is always associated with exactly one event after deletion. If a task is deleted, it is removed, but if an event is deleted, associated tasks may be deleted (as implied in EventList), but this is not explicitly shown in backend logic.",
+      "There is no explicit endpoint or function for unassigning a task from an event without deleting the task (i.e., making a task 'unassigned'). The current logic only allows reassignment or deletion."
+    ]
+  },
+  "task_1962837450_20240606120001": {
+    "implementation": [
+      {
+        "How_is_it_connected_to_implementation": "Displays all tasks passed as props, rendering each with TaskCard. It is the main UI for viewing all tasks.",
+        "file_path": "frontend/src/components/TaskList.tsx",
+        "id": "ui_task_list_component_view_all_tasks",
+        "name": "TaskList",
+        "pseudo_code": "IF tasks array is empty\n    Display 'No tasks yet' message\nELSE\n    FOR each task in tasks\n        Render TaskCard with task details\n    END FOR\nEND IF",
+        "type": "component"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Fetches all tasks from the backend API. Used by the UI to retrieve the list of tasks.",
+        "file_path": "frontend/src/services/api.ts",
+        "id": "frontend_api_get_tasks_function",
+        "name": "getTasks",
+        "pseudo_code": "IF eventId is provided\n    Set params to { event_id: eventId }\nELSE\n    Set params to empty object\nEND IF\nSend GET request to '/tasks' endpoint with params\nReturn response data (list of tasks)",
+        "type": "function"
+      },
+      {
+        "How_is_it_connected_to_implementation": "API endpoint '/api/tasks' (GET) that returns all tasks, optionally filtered by event_id. Invoked by frontend getTasks.",
+        "file_path": "backend/api/tasks.py",
+        "id": "backend_api_tasks_get_all_tasks_endpoint",
+        "name": "get_all_tasks",
+        "pseudo_code": "Receive GET request to '/api/tasks' with optional event_id\nCreate TaskService instance\nCall TaskService.get_all_tasks(event_id)\nReturn list of tasks",
+        "type": "endpoint"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Business logic to retrieve all tasks, optionally filtered by event_id. Invoked by API endpoint.",
+        "file_path": "backend/services/task_service.py",
+        "id": "backend_service_task_service_get_all_tasks",
+        "name": "TaskService.get_all_tasks",
+        "pseudo_code": "Call TaskRepository.get_all(event_id)\nFOR each task in tasks\n    Convert task to TaskResponse\nEND FOR\nReturn list of TaskResponse",
+        "type": "function"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Database operation to fetch all tasks, optionally filtered by event_id. Invoked by TaskService.",
+        "file_path": "backend/repositories/task_repository.py",
+        "id": "backend_repository_task_repository_get_all",
+        "name": "TaskRepository.get_all",
+        "pseudo_code": "Create query for Task table\nIF event_id is provided\n    Filter query by Task.event_id == event_id\nEND IF\nReturn all results from query",
+        "type": "function"
+      }
+    ],
+    "missing_implementations": []
+  },
+  "task_0741829312_20240606120000": {
+    "implementation": [
+      {
+        "How_is_it_connected_to_implementation": "UI component that allows the user to input task title, description, and status, and triggers task creation via API.",
+        "file_path": "frontend/src/components/TaskForm.tsx",
+        "id": "ui_task_form_component_create_task",
+        "name": "TaskForm",
+        "pseudo_code": "IF user submits form\n    IF editing existing task\n        CALL updateTask API with task data\n    ELSE\n        CALL createTask API with task data (title, description, status, event_id)\n    IF API call succeeds\n        CALL onSuccess callback\n    ELSE\n        SHOW error message",
+        "type": "component"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Frontend function that sends a POST request to the backend to create a new task with the provided data.",
+        "file_path": "frontend/src/services/api.ts",
+        "id": "frontend_create_task_api_function",
+        "name": "createTask",
+        "pseudo_code": "SEND POST request to /api/tasks with task data\nRETURN response from backend",
+        "type": "function"
+      },
+      {
+        "How_is_it_connected_to_implementation": "API endpoint that receives task creation requests, validates input, and delegates to the service layer.",
+        "file_path": "backend/api/tasks.py",
+        "id": "backend_tasks_create_endpoint",
+        "name": "create_task",
+        "pseudo_code": "ON POST /api/tasks\n    PARSE TaskCreate payload\n    CREATE TaskService instance\n    CALL TaskService.create_task with payload\n    RETURN created task response",
+        "type": "endpoint"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Service method that validates event existence, converts status, creates Task object, and delegates to repository for DB insertion.",
+        "file_path": "backend/services/task_service.py",
+        "id": "backend_task_service_create_task_method",
+        "name": "TaskService.create_task",
+        "pseudo_code": "IF event with event_id exists\n    CONVERT status to DB enum\n    CREATE Task object with title, description, status, event_id\n    CALL TaskRepository.create with Task object\n    RETURN TaskResponse for created task\nELSE\n    RAISE HTTP 404 error",
+        "type": "function"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Repository method that adds the Task object to the database, commits, refreshes, and returns the persisted Task.",
+        "file_path": "backend/repositories/task_repository.py",
+        "id": "backend_task_repository_create_method",
+        "name": "TaskRepository.create",
+        "pseudo_code": "ADD Task object to DB session\nCOMMIT transaction\nREFRESH Task object\nRETURN Task object",
+        "type": "function"
+      }
+    ],
+    "missing_implementations": []
+  },
+  "task_8392710645_20240606120002": {
+    "implementation": [
+      {
+        "How_is_it_connected_to_implementation": "Displays the Edit button for each task. When clicked, triggers the edit action for the selected task.",
+        "file_path": "frontend/src/components/TaskCard.tsx",
+        "id": "ui_task_card_edit_button",
+        "name": "TaskCard (Edit Button)",
+        "pseudo_code": "IF user clicks Edit button\n    CALL onEdit() callback",
+        "type": "component"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Receives the edit action from TaskCard and opens TaskForm modal with the selected task for editing.",
+        "file_path": "frontend/src/components/TaskList.tsx",
+        "id": "ui_task_list_edit_handler",
+        "name": "TaskList (onEdit handler)",
+        "pseudo_code": "FOR each task in tasks\n    RENDER TaskCard with onEdit handler\nIF onEdit(task) is called\n    OPEN TaskForm modal with task data",
+        "type": "component"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Handles the form submission for editing a task. Calls updateTask API if editing an existing task.",
+        "file_path": "frontend/src/components/TaskForm.tsx",
+        "id": "ui_task_form_edit_submit",
+        "name": "TaskForm (handleSubmit for Edit)",
+        "pseudo_code": "IF form is submitted\n    IF task exists\n        CALL updateTask(task.id, form data)\n    ELSE\n        CALL createTask(form data)",
+        "type": "component"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Sends a PUT request to the backend to update the task details.",
+        "file_path": "frontend/src/services/api.ts",
+        "id": "frontend_api_update_task",
+        "name": "updateTask (API call)",
+        "pseudo_code": "FUNCTION updateTask(taskId, data)\n    SEND PUT request to /api/tasks/{taskId} with data\n    RETURN response",
+        "type": "function"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Receives the PUT request from frontend, invokes TaskService to update the task.",
+        "file_path": "backend/api/tasks.py",
+        "id": "backend_api_update_task_endpoint",
+        "name": "update_task (API endpoint)",
+        "pseudo_code": "ENDPOINT PUT /api/tasks/{task_id}\n    CALL TaskService.update_task(task_id, task_data)\n    RETURN updated task",
+        "type": "endpoint"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Contains business logic for updating task fields, validating event existence, and updating timestamps.",
+        "file_path": "backend/services/task_service.py",
+        "id": "backend_service_update_task",
+        "name": "TaskService.update_task",
+        "pseudo_code": "FUNCTION update_task(task_id, task_data)\n    FETCH task by id\n    IF task not found\n        RAISE 404 error\n    FOR each field in task_data\n        IF field is not None\n            UPDATE task field\n    IF event_id changed\n        VALIDATE event exists\n        UPDATE task.event_id\n    UPDATE task.updated_at\n    CALL repository.update(task)\n    RETURN updated task",
+        "type": "function"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Commits the updated task object to the database and refreshes it.",
+        "file_path": "backend/repositories/task_repository.py",
+        "id": "backend_repository_update_task",
+        "name": "TaskRepository.update",
+        "pseudo_code": "FUNCTION update(task)\n    COMMIT changes to database\n    REFRESH task object\n    RETURN task",
+        "type": "function"
+      }
+    ],
+    "missing_implementations": []
+  },
+  "task_4051629387_20240606120003": {
+    "implementation": [
+      {
+        "How_is_it_connected_to_implementation": "UI handler for deleting a task. Invoked when the user clicks the delete button on a TaskCard. Calls the deleteTask API and triggers UI update.",
+        "file_path": "frontend/src/components/TaskList.tsx",
+        "id": "ui_tasklist_handle_delete",
+        "name": "handleDelete",
+        "pseudo_code": "IF user confirms deletion\n    TRY\n        Call deleteTask(id) API\n        Call onDelete() to refresh UI\n    CATCH error\n        Log error\n        Show alert 'Failed to delete task'",
+        "type": "component"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Frontend API function that sends a DELETE request to the backend endpoint for the specified task ID.",
+        "file_path": "frontend/src/services/api.ts",
+        "id": "frontend_api_delete_task",
+        "name": "deleteTask",
+        "pseudo_code": "Send HTTP DELETE request to '/tasks/{id}' endpoint\nWait for response\nReturn nothing",
+        "type": "function"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Backend API endpoint for DELETE /api/tasks/{task_id}. Receives the request, instantiates TaskService, and calls its delete_task method.",
+        "file_path": "backend/api/tasks.py",
+        "id": "backend_endpoint_delete_task",
+        "name": "delete_task",
+        "pseudo_code": "On DELETE /api/tasks/{task_id}:\n    Create TaskService instance\n    Call TaskService.delete_task(task_id)\n    Return HTTP 204 No Content",
+        "type": "endpoint"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Service layer function that validates task existence and delegates deletion to the repository. Raises HTTP 404 if task not found.",
+        "file_path": "backend/services/task_service.py",
+        "id": "backend_service_delete_task",
+        "name": "TaskService.delete_task",
+        "pseudo_code": "Get task by ID from repository\nIF task does not exist\n    Raise HTTP 404 error\nCall repository.delete(task)\nReturn nothing",
+        "type": "function"
+      },
+      {
+        "How_is_it_connected_to_implementation": "Repository function that performs the actual database deletion of the task and commits the transaction.",
+        "file_path": "backend/repositories/task_repository.py",
+        "id": "backend_repository_delete_task",
+        "name": "TaskRepository.delete",
+        "pseudo_code": "Delete task object from database session\nCommit transaction",
+        "type": "function"
+      }
+    ],
+    "missing_implementations": []
   }
 }
