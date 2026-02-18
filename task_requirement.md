@@ -7,7 +7,7 @@
 - Edit task details
 - Delete a task
 
----
+--- 
 
 ### 3. Task Assignment to Events
 - Assign one or more tasks to an event
