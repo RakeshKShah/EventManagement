@@ -4,7 +4,7 @@
 This application allows users to manage events, create tasks, and assign tasks to specific events to ensure organized event execution. 
 
 ---
-
+ 
 ## Functional Requirements
 
 ### 1. Event Management
