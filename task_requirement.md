@@ -14,4 +14,4 @@
 - View all tasks associated with a specific event
 - Reassign a task to another event
 - Remove a task from an event
-- Each task must be associated with exactly one event
+- Each task must be associated with exactly one event 
