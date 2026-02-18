@@ -2,7 +2,7 @@
 
 A full-stack web application for managing events and their associated tasks, built with Python (FastAPI) backend and TypeScript (React) frontend.
 
-## Features
+## Features 
 
 ### Event Management
 - Create events with name, description, start date, and end date
