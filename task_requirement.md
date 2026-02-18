@@ -6,7 +6,7 @@
 - View all tasks
 - Edit task details
 - Delete a task
-
+ 
 --- 
 
 ### 3. Task Assignment to Events
