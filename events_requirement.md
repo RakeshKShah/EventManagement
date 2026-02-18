@@ -16,3 +16,4 @@ This application allows users to manage events, create tasks, and assign tasks t
 - View a list of all events
 - Edit event details
 - Delete an event
+ 
